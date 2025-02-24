@@ -1,12 +1,9 @@
 package com.example.springbootnyano.repository;
 
-import com.example.springbootnyano.entity.ProductEntity;
+import com.example.springbootnyano.entity.OrderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 @Repository
-public interface  ProductRepository extends JpaRepository<ProductEntity,Long> {
-
-
+public interface OrderRepository extends JpaRepository<OrderEntity,Long> {
 }
