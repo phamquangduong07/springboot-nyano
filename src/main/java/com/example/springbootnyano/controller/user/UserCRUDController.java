@@ -1,4 +1,4 @@
-package com.example.springbootnyano.controller;
+package com.example.springbootnyano.controller.user;
 
 
 import com.example.springbootnyano.entity.user.UserEntity;

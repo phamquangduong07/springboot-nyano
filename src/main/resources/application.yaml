@@ -18,3 +18,18 @@ spring:
   server:
     port:8080
 
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: phamquangduong28102003@gmail.com
+    password: dgiv wdnw gfvw ezcy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
+            required: false
+          ssl:
+            enable: true
+
