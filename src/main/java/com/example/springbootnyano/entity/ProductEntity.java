@@ -1,41 +1,29 @@
 package com.example.springbootnyano.entity;
 
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 
 @Data
+@Entity
 @Table(name = "java_product_001")
 public class ProductEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String productName;
 
     private BigDecimal productPrice;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public BigDecimal getProductPrice() {
-        return productPrice;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setProductPrice(BigDecimal productPrice) {
-        this.productPrice = productPrice;
-    }
+   @ManyToMany(fetch = FetchType.EAGER)
+   @JoinTable(
+           name = "java_product_order_001",
+           joinColumns = @JoinColumn(name="product_id"),
+           inverseJoinColumns = @JoinColumn(name="order_id")
+   )
+    private List<OrderEntity> orderList;
 }
